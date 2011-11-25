@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cards>
+	<creature number="10" name="man" points="3" strength="4" carry="50" friendly="2" neutral="2" />
+	<creature number="10" name="woman" points="2" strength="3" carry="25" friendly="2" neutral="2" />
+	<creature number="5" name="dwarf" points="3" strength="4" carry="50" friendly="2" neutral="2" />
+	<treasure number="5" name="gold" points="10" weight="25" />
+	<treasure number="10" name="silver" points="5" weight="25" />
+	<treasure number="2" name="gems" points="25" weight="25" />
+	<hazard number="5" name="earthquake" action="org.sumption.sorcerer.cards.hazards.Earthquake"/>
+</cards>
