@@ -1,19 +1,20 @@
-package org.sumption.sorcerer.model.cards
+package org.sumption.sorcerer.model
 {
-	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
-	
-	public class CardsProxy extends Proxy
+    import org.sumption.sorcerer.model.cards.*;
+
+	public class CardsModel
 	{
-		public static const NAME:String = "org.sumption.sorcerer.model.CardProxy";
-		
-		public function CardsProxy()
+        private var _data:CardDeckVO;
+
+		public function CardsModel()
 		{
-			super(NAME, new CardDeckVO());
+			_data=new CardDeckVO();
+            trace(this + " create");
 		}
 		
 		private function get vo():CardDeckVO
 		{
-			return data as CardDeckVO;
+			return _data as CardDeckVO;
 		}
 		
 		public function createCardDeckFromXml(cardData:XML):void
@@ -72,5 +73,10 @@ package org.sumption.sorcerer.model.cards
 			card.points = xml.@points;
 			vo.add(card);
 		}
-	}
+
+        public function set data(value:CardDeckVO):void
+        {
+            _data = value;
+        }
+    }
 }

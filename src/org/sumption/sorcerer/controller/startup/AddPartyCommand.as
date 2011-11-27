@@ -1,19 +1,20 @@
 package org.sumption.sorcerer.controller.startup
 {
-	import org.puremvc.as3.multicore.interfaces.INotification;
-	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
-	import org.sumption.sorcerer.model.party.PartiesProxy;
+    import org.robotlegs.mvcs.Command;
+    import org.sumption.sorcerer.model.PartiesModel;
 	import org.sumption.sorcerer.model.map.LocationVectorVO;
 	import org.sumption.sorcerer.model.party.PartyVO;
 	
-	public class AddPartyCommand extends SimpleCommand
+	public class AddPartyCommand extends Command
 	{
-		override public function execute(notification:INotification):void
+        [Inject]
+        public var partiesModel:PartiesModel;
+
+		override public function execute():void
 		{
-			var proxy:PartiesProxy = facade.retrieveProxy(PartiesProxy.NAME) as PartiesProxy;
 			var party:PartyVO = new PartyVO();
 			party.location = new LocationVectorVO(0, 0, 0);
-			proxy.addParty(party);
+			partiesModel.addParty(party);
 		}
 	}
 }

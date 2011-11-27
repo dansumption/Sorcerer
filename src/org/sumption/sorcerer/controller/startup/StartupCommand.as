@@ -1,19 +1,18 @@
 package org.sumption.sorcerer.controller.startup
 {
-	import org.puremvc.as3.multicore.patterns.command.AsyncMacroCommand;
-	import org.sumption.sorcerer.controller.turns.NextPlayerCommand;
-	
-	public class StartupCommand extends AsyncMacroCommand
+    import org.robotlegs.mvcs.Command;
+    import org.robotlegs.utilities.macrobot.SequenceCommand;
+    import org.sumption.sorcerer.controller.turns.NextPlayerCommand;
+
+    public class StartupCommand extends SequenceCommand
 	{
-		override protected function initializeAsyncMacroCommand():void
-		{
-			addSubCommand(InitialiseControllerCommand);
-			addSubCommand(InitialiseViewCommand);
-			addSubCommand(InitialiseModelCommand);
-			addSubCommand(LoadCardsAsyncCommand);
-			addSubCommand(PrepareMapCommand);
-			addSubCommand(AddPartyCommand);
-			addSubCommand(NextPlayerCommand);
-		}
+
+        public function StartupCommand()
+        {
+            addCommand(LoadCardsAsyncCommand);
+            addCommand(PrepareMapCommand);
+            addCommand(AddPartyCommand);
+            addCommand(NextPlayerCommand);
+        }
 	}
 }

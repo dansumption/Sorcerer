@@ -1,23 +1,30 @@
 package org.sumption.sorcerer
 {
 	import flash.display.Sprite;
-	
-	import org.sumption.sorcerer.core.SorcererFacade;
-	
-	[SWF(width="800", height="800", backgroundColor="#FFFFFF")]
+
+    import org.sumption.sorcerer.view.components.MapView;
+    import org.sumption.sorcerer.view.components.PartiesView;
+
+    [SWF(width="800", height="800", backgroundColor="#FFFFFF")]
 	
 	public class Sorcerer extends Sprite
 	{
-		public static const NAME:String = "org.sumption.sorcerer";
+		private var context:ApplicationContext;
+        private var mapView:MapView;
+        private var partiesView:PartiesView;
 
 		public function Sorcerer()
 		{
-			init();
+            context = new ApplicationContext(this);
 		}
-		
-		private function init():void
-		{
-			SorcererFacade.getInstance(NAME).startup(this);
-		}
+
+		public function createChildren():void
+        {
+            mapView = new MapView();
+            addChild(mapView);
+
+            partiesView = new PartiesView();
+            addChild(partiesView);
+        }
 	}
 }

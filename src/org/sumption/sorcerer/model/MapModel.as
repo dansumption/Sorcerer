@@ -1,14 +1,15 @@
-package org.sumption.sorcerer.model.map
+package org.sumption.sorcerer.model
 {
-	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
-	
-	public class MapProxy extends Proxy
+    import org.sumption.sorcerer.model.map.*;
+
+	public class MapModel
 	{
-		public static const NAME:String = "org.sumption.sorcerer.model.MapProxy";
-		
-		public function MapProxy()
+		private var data:MapVO;
+
+		public function MapModel()
 		{
-			super(NAME, new MapVO());
+			data = new MapVO();
+            trace(this + " create");
 		}
 		
 		private function get vo():MapVO

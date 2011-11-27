@@ -2,16 +2,17 @@ package org.sumption.sorcerer.utils
 {
 	import flash.display.Sprite;
 	
-	import maps.Map;
 	import org.sumption.sorcerer.model.map.TileVO;
 	import org.sumption.sorcerer.view.components.TileSprite;
 	
 	import org.sumption.sorcerer.model.party.PartyVO;
 	
-	import utils.Locator;
 
 	public class RenderManager
 	{
+        // TODO - any of this still needed?
+
+        /*
 		private var baseSprite:Sprite;
 		private var mapSprite:Sprite;
 		private var actorSprite:Sprite;
@@ -89,6 +90,6 @@ package org.sumption.sorcerer.utils
 		private function get centreY():Number
 		{
 			return baseSprite.stage.stageHeight/2;
-		}
+		}*/
 	}
 }

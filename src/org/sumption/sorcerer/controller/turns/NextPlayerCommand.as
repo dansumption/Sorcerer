@@ -1,22 +1,29 @@
 package org.sumption.sorcerer.controller.turns
 {
-	import org.puremvc.as3.multicore.interfaces.INotification;
-	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
-	import org.sumption.sorcerer.core.SystemNotifcations;
-	import org.sumption.sorcerer.model.party.PartiesProxy;
-	import org.sumption.sorcerer.model.party.PartyVO;
-	import org.sumption.sorcerer.view.PartiesMediator;
-	
-	public class NextPlayerCommand extends SimpleCommand
+    import org.robotlegs.mvcs.Command;
+    import org.sumption.sorcerer.model.PartiesModel;
+    import org.sumption.sorcerer.model.party.PartyVO;
+    import org.sumption.sorcerer.signal.EnableInput;
+    import org.sumption.sorcerer.signal.Render;
+    import org.sumption.sorcerer.view.PartiesMediator;
+
+    public class NextPlayerCommand extends Command
 	{
-		override public function execute(notification:INotification):void
+        [Inject]
+        public var partiesModel:PartiesModel;
+        
+        [Inject]
+        public var render:Render;
+
+        [Inject]
+        public var enableInput:EnableInput;
+        
+		override public function execute():void
 		{
-			var partiesProxy:PartiesProxy = facade.retrieveProxy(PartiesProxy.NAME) as PartiesProxy;
-			var party:PartyVO = partiesProxy.advanceAndRetrieveNextParty();
-			sendNotification(SystemNotifcations.RENDER, party.location);
-			
-			var partiesMediator:PartiesMediator = facade.retrieveMediator(PartiesMediator.NAME) as PartiesMediator;
-			partiesMediator.enable();
+            // TODO (possibly) advance to next party
+			var party:PartyVO = partiesModel.advanceAndRetrieveNextParty();
+            render.dispatch(party.location);
+            enableInput.dispatch();
 		}
 	}
 }

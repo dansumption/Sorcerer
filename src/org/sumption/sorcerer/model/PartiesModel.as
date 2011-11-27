@@ -1,17 +1,22 @@
-package org.sumption.sorcerer.model.party
+package org.sumption.sorcerer.model
 {
-	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
+    import org.sumption.sorcerer.model.party.*;
 	import org.sumption.sorcerer.core.SystemNotifcations;
 	import org.sumption.sorcerer.model.party.PartiesVO;
 	import org.sumption.sorcerer.model.party.PartyVO;
-	
-	public class PartiesProxy extends Proxy
+    import org.sumption.sorcerer.signal.PartyAdded;
+
+    public class PartiesModel
 	{
-		public static const NAME:String = "org.sumption.sorcerer.model.PartiesProxy"; 
-		
-		public function PartiesProxy()
+        [Inject]
+        public var partyAdded:PartyAdded;
+
+		private var data:PartiesVO;
+
+		public function PartiesModel()
 		{
-			super(NAME, new PartiesVO());
+			data = new PartiesVO();
+            trace(this + " create");
 		}
 		
 		private function get vo():PartiesVO
@@ -38,7 +43,7 @@ package org.sumption.sorcerer.model.party
 		{
 			partyVo.id = vo.allocatedPartyIndex++;
 			vo.allParties.push(partyVo);
-			sendNotification(SystemNotifcations.PARTY_ADDED, partyVo);
+            partyAdded.dispatch(partyVo)
 		}
 		
 		public function getPartyById(id:uint):PartyVO
