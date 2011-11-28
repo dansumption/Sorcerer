@@ -6,7 +6,7 @@ package org.sumption.sorcerer.view.components
 	
 	public class PartySprite extends Sprite
 	{
-		private static const SIZE:Number = 10;
+		private static const SIZE:Number = 1;
 		
 		public var party:PartyVO;
 		

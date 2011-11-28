@@ -15,10 +15,12 @@ package org.sumption.sorcerer.controller.moving
         [Inject]
         public var mapModel:MapModel;
 
+        private var toTile:TileVO;
+
         override public function execute():void
         {
             trace(this + ".execute()");
-            if (partyMoveVo.allowed && !partyMoveVo.leavingCavern)
+            if (partyMoveVo.allowed && !partyMoveVo.leavingGame)
             {
                 checkForDeadEnd();
             }
@@ -28,16 +30,13 @@ package org.sumption.sorcerer.controller.moving
         {
             trace("check for dead end");
             var party:PartyVO = partyMoveVo.party;
-            var toTile:TileVO = mapModel.getTile(party.location);
+            toTile = mapModel.getTile(party.location);
 
-            if (!toTile.hasExitInDirection(party.positionOnTile) &&
-                    partyMoveVo.direction != MapUtils.UP &&
-                    partyMoveVo.direction != MapUtils.DOWN)
+            if (!toTile.hasExitInDirection(party.positionOnTile))
             {
                 partyMoveVo.deadEnd = true;
                 toTile.explored = party.positionOnTile | toTile.explored;
             }
-
         }
     }
 }

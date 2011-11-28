@@ -17,10 +17,15 @@ package org.sumption.sorcerer.controller.moving
         {
             trace(this + ".execute()");
             var fromTile:TileVO = mapModel.getTile(partyMoveVo.party.location);
+            trace ("Party move direction: " + partyMoveVo.direction);
             if (!fromTile.hasExitInDirection(partyMoveVo.direction))
             {
-                trace("Invalid move");
+                trace("INVALID MOVE - no exit in that direction");
                 partyMoveVo.allowed = false;
+            }
+            else
+            {
+                trace("move not blocked yet - but may be if new tile throws up dead end");
             }
         }
     }

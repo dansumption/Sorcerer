@@ -32,8 +32,8 @@ package org.sumption.sorcerer.controller.moving
 
             if (party.location.z < 0)
             {
-                partyMoveVo.leavingCavern = true;
-                // TODO - previously sent "leave cavern" notification - is this still needed?
+                partyMoveVo.leavingGame = true;
+                // TODO - handle end of game/leaving cavern
             }
         }
     }

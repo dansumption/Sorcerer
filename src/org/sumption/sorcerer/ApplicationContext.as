@@ -11,6 +11,8 @@ package org.sumption.sorcerer
 
     import org.robotlegs.mvcs.SignalContext;
     import org.sumption.sorcerer.controller.AddTileCommand;
+    import org.sumption.sorcerer.controller.ZoomInCommand;
+    import org.sumption.sorcerer.controller.ZoomOutCommand;
     import org.sumption.sorcerer.controller.moving.MovePartyMacroCommand;
     import org.sumption.sorcerer.controller.startup.AddPartyCommand;
     import org.sumption.sorcerer.controller.startup.LoadCardsAsyncCommand;
@@ -30,6 +32,8 @@ package org.sumption.sorcerer
     import org.sumption.sorcerer.signal.NextPlayer;
     import org.sumption.sorcerer.signal.Render;
     import org.sumption.sorcerer.signal.Startup;
+    import org.sumption.sorcerer.signal.ZoomIn;
+    import org.sumption.sorcerer.signal.ZoomOut;
     import org.sumption.sorcerer.view.ApplicationMediator;
     import org.sumption.sorcerer.view.MapMediator;
     import org.sumption.sorcerer.view.PartiesMediator;
@@ -55,6 +59,8 @@ package org.sumption.sorcerer
             signalCommandMap.mapSignalClass(AddTile, AddTileCommand);
             signalCommandMap.mapSignalClass(NextPlayer, NextPlayerCommand);
             signalCommandMap.mapSignalClass(MoveParty, MovePartyMacroCommand);
+            signalCommandMap.mapSignalClass(ZoomIn, ZoomInCommand);
+            signalCommandMap.mapSignalClass(ZoomOut, ZoomOutCommand);
 
             trace("\n Signals -> mediators");
             injector.mapSingleton(CardsLoaded);

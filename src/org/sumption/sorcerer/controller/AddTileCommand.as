@@ -40,8 +40,8 @@ package org.sumption.sorcerer.controller
 				tile.west = Random.twoThirds();
 			}
 			
-			tile.up = Random.fiftyFifty();
-			tile.down = Random.fiftyFifty();
+			tile.up = Random.oneTwentieth();
+			tile.down = Random.oneTenth();
 			
 			tile.cavern = Random.fiftyFifty();
 		}

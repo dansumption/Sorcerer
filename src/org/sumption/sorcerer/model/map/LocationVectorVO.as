@@ -60,7 +60,7 @@ package org.sumption.sorcerer.model.map
 		public function toString():String
 		{
 			return "LocationVectorVO: [" + x + ", " + y + ", " + z +
-				"] --> [" + xMapped + ", " + yMapped + ", " + zMapped + "]"; 
+				"] (Mapped to uint --> [" + xMapped + ", " + yMapped + ", " + zMapped + "])";
 		}
 
 	}

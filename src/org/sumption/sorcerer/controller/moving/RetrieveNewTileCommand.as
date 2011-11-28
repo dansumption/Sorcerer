@@ -5,6 +5,7 @@ package org.sumption.sorcerer.controller.moving
     import org.sumption.sorcerer.model.map.TileVO;
     import org.sumption.sorcerer.model.party.PartyMoveVO;
     import org.sumption.sorcerer.signal.AddTile;
+    import org.sumption.sorcerer.utils.MapUtils;
 
     public class RetrieveNewTileCommand extends Command
     {
@@ -17,10 +18,12 @@ package org.sumption.sorcerer.controller.moving
         [Inject]
         public var addTile:AddTile;
 
+        private var toTile:TileVO;
+
         override public function execute():void
         {
             trace(this + ".execute()");
-            if (partyMoveVo.allowed && !partyMoveVo.leavingCavern)
+            if (partyMoveVo.allowed && !partyMoveVo.leavingGame)
             {
                 retrieveNewTile();
             }
@@ -29,10 +32,31 @@ package org.sumption.sorcerer.controller.moving
         private function retrieveNewTile():void
         {
             trace("retrieve new tile");
-            var toTile:TileVO = mapModel.getTile(partyMoveVo.party.location);
+            assignTargetTile();
             if (toTile == null)
             {
                 addTile.dispatch(partyMoveVo.party.location);
+                assignTargetTile();
+                trace ("Added new tile " + toTile);
+            }
+            addStairsToTargetTile();
+        }
+
+        private function assignTargetTile():void
+        {
+            toTile = mapModel.getTile(partyMoveVo.party.location);
+        }
+
+        private function addStairsToTargetTile():void
+        {
+            // Stairs never lead to dead ends
+            if (partyMoveVo.direction == MapUtils.UP)
+            {
+                toTile.down = true;
+            }
+            else if (partyMoveVo.direction == MapUtils.DOWN)
+            {
+                toTile.up = true;
             }
         }
     }

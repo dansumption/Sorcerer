@@ -20,10 +20,13 @@ package org.sumption.sorcerer.controller.turns
         
 		override public function execute():void
 		{
-            // TODO (possibly) advance to next party
+            // TODO advance to next party
 			var party:PartyVO = partiesModel.advanceAndRetrieveNextParty();
             render.dispatch(party.location);
             enableInput.dispatch();
+            trace("--------------------------------------------------------------------");
+            trace("----------- NEXT PLAYER --------------------------------------------");
+            trace("--------------------------------------------------------------------");
 		}
 	}
 }

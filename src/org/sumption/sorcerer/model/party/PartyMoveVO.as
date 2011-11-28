@@ -7,6 +7,6 @@ package org.sumption.sorcerer.model.party
 		public var direction:uint;
 		public var allowed:Boolean = true;
 		public var deadEnd:Boolean = false;
-		public var leavingCavern:Boolean = false;
+		public var leavingGame:Boolean = false;
 	}
 }

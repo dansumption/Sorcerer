@@ -25,7 +25,7 @@ package org.sumption.sorcerer.controller.moving
         override public function execute():void
         {
             trace(this + ".execute()");
-            if (partyMoveVo.allowed && !partyMoveVo.leavingCavern)
+            if (partyMoveVo.allowed && !partyMoveVo.leavingGame)
             {
                 completeMove();
             }

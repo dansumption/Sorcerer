@@ -3,6 +3,8 @@ package org.sumption.sorcerer.view
     import flash.events.KeyboardEvent;
     import flash.ui.Keyboard;
 
+    import org.sumption.sorcerer.model.MapModel;
+
     import org.sumption.sorcerer.model.PartiesModel;
     import org.sumption.sorcerer.model.map.LocationVectorVO;
     import org.sumption.sorcerer.model.party.PartyMoveVO;
@@ -14,6 +16,7 @@ package org.sumption.sorcerer.view
     import org.sumption.sorcerer.signal.PartyAdded;
     import org.sumption.sorcerer.signal.Render;
     import org.sumption.sorcerer.utils.MapUtils;
+    import org.sumption.sorcerer.utils.Scale;
     import org.sumption.sorcerer.view.components.PartiesView;
     import org.sumption.sorcerer.view.components.PartySprite;
 
@@ -40,6 +43,9 @@ package org.sumption.sorcerer.view
         [Inject]
         public var disableInput:DisableInput;
 
+        [Inject]
+        public var mapModel:MapModel;
+
 
         override public function onRegister():void
         {
@@ -61,7 +67,7 @@ package org.sumption.sorcerer.view
         {
             getViewComponent().x = centreX;
             getViewComponent().y = centreY;
-            getViewComponent().render(mapCentre);
+            getViewComponent().render(mapCentre, Scale.scale( Scale.SIZES[mapModel.sizeIndex]));
         }
 
         override protected function onKeyDown(event:KeyboardEvent):void

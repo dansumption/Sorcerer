@@ -15,7 +15,7 @@ package org.sumption.sorcerer.controller.moving
             addCommand(UpdatePartyLocationCommand, partyMoveVo);
             addCommand(RetrieveNewTileCommand, partyMoveVo);
             addCommand(CheckForDeadEndCommand, partyMoveVo);
-            addCommand(ReturnFromDeadEndCommand, partyMoveVo);
+            addCommand(PositionPartyOnTileAndReturnFromDeadEndCommand, partyMoveVo);
             addCommand(HandleEncountersCommand, partyMoveVo);
             addCommand(CompleteMoveCommand, partyMoveVo);
             super.execute();
