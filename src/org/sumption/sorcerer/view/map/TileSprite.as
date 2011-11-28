@@ -1,4 +1,4 @@
-package org.sumption.sorcerer.view.components
+package org.sumption.sorcerer.view.map
 {
     import flash.display.Sprite;
 

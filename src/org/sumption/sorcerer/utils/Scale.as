@@ -43,9 +43,7 @@ package org.sumption.sorcerer.utils
 
         public static function isValidZoom(value:uint):Boolean
         {
-            if (value < 0 || value >= SIZES.length)
-                return false;
-            return true;
+            return (value >= 0 && value < SIZES.length);
         }
     }
 }

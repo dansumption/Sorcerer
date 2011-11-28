@@ -17,8 +17,8 @@ package org.sumption.sorcerer.view
     import org.sumption.sorcerer.signal.Render;
     import org.sumption.sorcerer.utils.MapUtils;
     import org.sumption.sorcerer.utils.Scale;
-    import org.sumption.sorcerer.view.components.PartiesView;
-    import org.sumption.sorcerer.view.components.PartySprite;
+    import org.sumption.sorcerer.view.parties.PartiesView;
+    import org.sumption.sorcerer.view.parties.PartySprite;
 
     public class PartiesMediator extends InteractiveMediator
     {

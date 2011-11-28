@@ -1,11 +1,12 @@
-package org.sumption.sorcerer.view
+package org.sumption.sorcerer.view.map
 {
+    import org.sumption.sorcerer.view.*;
     import org.sumption.sorcerer.model.MapModel;
     import org.sumption.sorcerer.model.map.LocationVectorVO;
     import org.sumption.sorcerer.model.map.TileVO;
     import org.sumption.sorcerer.signal.Render;
     import org.sumption.sorcerer.utils.Scale;
-    import org.sumption.sorcerer.view.components.TileSprite;
+    import org.sumption.sorcerer.view.map.TileSprite;
 
     public class MapMediator extends InteractiveMediator
     {

@@ -35,10 +35,12 @@ package org.sumption.sorcerer
     import org.sumption.sorcerer.signal.ZoomIn;
     import org.sumption.sorcerer.signal.ZoomOut;
     import org.sumption.sorcerer.view.ApplicationMediator;
-    import org.sumption.sorcerer.view.MapMediator;
+    import org.sumption.sorcerer.view.encounter.EncounterMediator;
+    import org.sumption.sorcerer.view.encounter.EncounterView;
+    import org.sumption.sorcerer.view.map.MapMediator;
     import org.sumption.sorcerer.view.PartiesMediator;
-    import org.sumption.sorcerer.view.components.MapView;
-    import org.sumption.sorcerer.view.components.PartiesView;
+    import org.sumption.sorcerer.view.map.MapView;
+    import org.sumption.sorcerer.view.parties.PartiesView;
 
     public class ApplicationContext extends SignalContext
     {
@@ -81,6 +83,7 @@ package org.sumption.sorcerer
             trace("\n View");
             mediatorMap.mapView(MapView, MapMediator);
             mediatorMap.mapView(PartiesView, PartiesMediator);
+            mediatorMap.mapView(EncounterView, EncounterMediator);
 
             trace("\n ApplicationMediator");
             mediatorMap.mapView(Sorcerer, ApplicationMediator);

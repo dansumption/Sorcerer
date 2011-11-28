@@ -1,5 +1,6 @@
-package org.sumption.sorcerer.view.components
+package org.sumption.sorcerer.view.map
 {
+    import org.sumption.sorcerer.view.components.*;
     import flash.display.Sprite;
 
     import org.sumption.sorcerer.model.MapModel;

@@ -15,8 +15,6 @@ package org.sumption.sorcerer.controller.moving
         [Inject]
         public var mapModel:MapModel;
 
-        private var toTile:TileVO;
-
         override public function execute():void
         {
             trace(this + ".execute()");
@@ -30,7 +28,7 @@ package org.sumption.sorcerer.controller.moving
         {
             trace("check for dead end");
             var party:PartyVO = partyMoveVo.party;
-            toTile = mapModel.getTile(party.location);
+            var toTile:TileVO = mapModel.getTile(party.location);
 
             if (!toTile.hasExitInDirection(party.positionOnTile))
             {
