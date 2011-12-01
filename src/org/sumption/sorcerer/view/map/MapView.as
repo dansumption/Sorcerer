@@ -1,6 +1,5 @@
 package org.sumption.sorcerer.view.map
 {
-    import org.sumption.sorcerer.view.components.*;
     import flash.display.Sprite;
 
     import org.sumption.sorcerer.model.MapModel;
@@ -53,6 +52,7 @@ package org.sumption.sorcerer.view.map
             trace ("--------------------------------------------------------");
         }
 
+        //noinspection JSUnusedGlobalSymbols
         public function clearBoard():void
         {
             while (numChildren)

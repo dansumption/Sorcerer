@@ -6,7 +6,7 @@ package org.sumption.sorcerer.model.cards
 		
 		public function add(card:ICard):void
 		{
-			for (var i:uint = 0; i < card.numberInDeck; i++)
+			for (var i:uint = 0; i < card.numberInPack; i++)
 			{
 				cards.push(card);
 			}

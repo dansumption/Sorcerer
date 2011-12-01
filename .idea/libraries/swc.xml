@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="swc" type="flex">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Code/3rd party/Robotlegs-signals/swc" />
+      <root url="file://$USER_HOME$/Code/3rd party/Robotlegs-signals/swc" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Code/3rd party/Robotlegs-signals/swc" recursive="false" />
+  </library>
+</component>

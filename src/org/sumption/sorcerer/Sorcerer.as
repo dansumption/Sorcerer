@@ -11,9 +11,12 @@ package org.sumption.sorcerer
 	
 	public class Sorcerer extends Sprite
 	{
-		private var context:ApplicationContext;
+        //noinspection JSFieldCanBeLocal
+        private var context:ApplicationContext;
 
+        //noinspection JSFieldCanBeLocal
         private var mapView:MapView;
+        //noinspection JSFieldCanBeLocal
         private var partiesView:PartiesView;
         private var encounterView:EncounterView;
 
@@ -31,6 +34,7 @@ package org.sumption.sorcerer
             addChild(partiesView);
 
             encounterView = new EncounterView();
+            addChild(encounterView);
         }
 
         public function addEncounterView():void

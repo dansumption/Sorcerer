@@ -24,6 +24,7 @@ package org.sumption.sorcerer
     import org.sumption.sorcerer.service.CardDataLoader;
     import org.sumption.sorcerer.signal.AddParty;
     import org.sumption.sorcerer.signal.CardsLoaded;
+    import org.sumption.sorcerer.signal.EnterCavern;
     import org.sumption.sorcerer.signal.PartyAdded;
     import org.sumption.sorcerer.signal.AddTile;
     import org.sumption.sorcerer.signal.DisableInput;
@@ -69,6 +70,7 @@ package org.sumption.sorcerer
             injector.mapSingleton(PartyAdded);
             injector.mapSingleton(EnableInput);
             injector.mapSingleton(DisableInput);
+            injector.mapSingleton(EnterCavern);
             injector.mapSingleton(Render);
 
             trace("\n Model");

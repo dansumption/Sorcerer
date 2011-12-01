@@ -30,12 +30,12 @@ package org.sumption.sorcerer.model.cards
 			_name = value;
 		}
 		
-		public function get numberInDeck():uint
+		public function get numberInPack():uint
 		{
 			return _numberInPack;
 		}
 		
-		public function set numberInDeck(value:uint):void
+		public function set numberInPack(value:uint):void
 		{
 			_numberInPack = value;
 		}
@@ -52,7 +52,7 @@ package org.sumption.sorcerer.model.cards
 		
 		public function toString():String
 		{
-			return "\nICard " + type + " name: " + name + " number in pack: " + numberInDeck + " points " + points + "\n";
+			return "\nICard " + type + " name: " + name + " number in pack: " + numberInPack + " points " + points + "\n";
 		}
 	}
 }

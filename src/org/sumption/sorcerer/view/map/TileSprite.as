@@ -31,7 +31,7 @@ package org.sumption.sorcerer.view.map
 
         private function init():void
         {
-            // trace ("\ndraw tile");
+            // trace ("\n draw tile");
             drawBackground();
             if (tile.exploredNorth)
             {

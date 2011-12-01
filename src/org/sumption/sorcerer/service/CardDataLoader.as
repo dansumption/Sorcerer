@@ -55,9 +55,11 @@ package org.sumption.sorcerer.service
             var card:CreatureCardVO = new CreatureCardVO();
             addSharedCardProperties(card, xml);
             card.strength = xml.@strength;
+            card.magic = xml.@magic;
             card.carry = xml.@carry;
             card.friendly = xml.@friendly;
-            card.neutral = xml.@neutral;
+            card.indifferent = xml.@indifferent;
+            card.hostile = xml.@hostile;
             return card;
         }
 
@@ -78,8 +80,8 @@ package org.sumption.sorcerer.service
         private function addSharedCardProperties(card:ICard, xml:XML):void
         {
             card.name = xml.@name;
-            card.numberInDeck = xml.@number;
-            card.points = xml.@points;
+            card.numberInPack = xml.@inPack;
+            card.points = xml.@value;
             cardDeckVo.add(card);
         }
     }

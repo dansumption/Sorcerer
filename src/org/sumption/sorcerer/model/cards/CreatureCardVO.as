@@ -7,9 +7,11 @@ package org.sumption.sorcerer.model.cards
 		public static const TYPE:String = "CREATURE";
 		
 		public var strength:int;
+        public var magic:int;
 		public var carry:int;
-		public var friendly:int;
-		public var neutral:int;
+		public var hostile:int;
+		public var indifferent:int;
+        public var friendly:int;
 		
 		public function CreatureCardVO()
 		{
@@ -18,8 +20,8 @@ package org.sumption.sorcerer.model.cards
 		
 		override public function toString():String
 		{
-			return super.toString() + "\tstrength: " + strength + " carry: " + carry
-				+ "kg friendly: " + friendly + " neutral: " + neutral;
+			return super.toString() + "\t strength: " + strength + " magic: " + magic + " carry: " + carry
+				+ "kg friendly: " + hostile + "indifferent: " + indifferent + " friendly: " + friendly;
 		}
 	}
 }

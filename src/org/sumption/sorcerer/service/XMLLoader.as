@@ -23,6 +23,7 @@ package org.sumption.sorcerer.service
             loader.load(urlRequest);
         }
 
+        //noinspection JSMethodCanBeStatic
         private function onError(event:Event):void
         {
             throw new Error("Could not open data file");
@@ -33,7 +34,8 @@ package org.sumption.sorcerer.service
             var xml:XML = new XML(event.target.data);
             processXML(xml);
         }
-        
+
+        //noinspection JSUnusedLocalSymbols
         protected function processXML(xml:XML):void
         {
             throw new Error("method must be overridden");

@@ -29,8 +29,9 @@ package org.sumption.sorcerer.controller
 			addCards(tile);
 			mapModel.addTile(tile);
 		}
-		
-		private function addExits(tile:TileVO):void
+
+        //noinspection JSMethodCanBeStatic
+        private function addExits(tile:TileVO):void
 		{
 			while (tile.numCardinalExits < 2)
 			{

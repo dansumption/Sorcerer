@@ -3,8 +3,6 @@ package org.sumption.sorcerer.utils
     public class Scale
     {
         public static const TILE_SIZE:Number = 50;
-        public static const ROWS:Number = 9;
-        public static const COLS:Number = 9;
 
         public static const SIZES:Vector.<uint> = new <uint>[TINY, SMALL, MEDIUM, LARGE];
 

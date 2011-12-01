@@ -11,5 +11,21 @@ package org.sumption.sorcerer.view.encounter
 
     public class EncounterView extends Sprite
     {
+        private static const CARD_SPACING:uint = 150;
+        private static const CARD_Y:uint = 580;
+        private static const CARD_X:uint = 20;
+        
+        public function addCard(card:Sprite):void
+        {
+            card.x = CARD_X + numChildren * CARD_SPACING;
+            card.y = CARD_Y;
+            addChild(card);
+        }
+
+        public function clearDisplay():void
+        {
+            while (numChildren)
+                removeChildAt(0);
+        }
     }
 }

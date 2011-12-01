@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cards>
-	<creature number="10" name="man" points="3" strength="4" carry="50" friendly="2" neutral="2" />
-	<creature number="10" name="woman" points="2" strength="3" carry="25" friendly="2" neutral="2" />
-	<creature number="5" name="dwarf" points="3" strength="4" carry="50" friendly="2" neutral="2" />
-	<treasure number="5" name="gold" points="10" weight="25" />
-	<treasure number="10" name="silver" points="5" weight="25" />
-	<treasure number="2" name="gems" points="25" weight="25" />
-	<hazard number="5" name="earthquake" action="org.sumption.sorcerer.cards.hazards.Earthquake"/>
+	<creature inPack="6" name="man" value="5" strength="3" carry="25" hostile="2" indifferent="2" friendly="2" />
+	<creature inPack="3" name="woman" value="5" strength="2" carry="25" hostile="2" indifferent="2" friendly="2" />
+    <creature inPack="1" name="male hero" value="10" strength="4" carry="50" hostile="3" indifferent="0" friendly="3" />
+    <creature inPack="1" name="female hero" value="10" strength="4" carry="50" hostile="3" indifferent="0" friendly="3" />
+	<creature inPack="3" name="dwarf" value="2" strength="1" carry="25" hostile="0" indifferent="4" friendly="2" />
+    <creature inPack="1" name="wizard" value="15" strength="2" magic="5" hostile="1" indifferent="4" friendly="1" />
+    <creature inPack="1" name="witch" value="10" strength="1" magic="4" hostile="2" indifferent="3" friendly="1" />
+    <creature inPack="3" name="priest" value="8" strength="2" magic="2" carry="25" hostile="1" indifferent="3" friendly="2" />
+    <creature inPack="1" name="wolf" value="2" strength="2" hostile="1" indifferent="2" friendly="3" />
+    <creature inPack="3" name="troll" value="4" strength="4" carry="75" hostile="3" indifferent="1" friendly="2" />
+    <creature inPack="3" name="ogre" value="5" strength="5" carry="100" hostile="4" indifferent="1" friendly="1" />
+    <creature inPack="1" name="unicorn" value="4" strength="4" hostile="?" />
+    <creature inPack="1" name="sybil" indifferent="4" friendly="2" />
+    <creature inPack="3" name="spectre" strength="5" hostile="5" indifferent="1" />
+    <creature inPack="3" name="dragon" />
+    <creature inPack="3" name="giant" />
+    <creature inPack="1" name="ghouls" />
+    <creature inPack="1" name="medusa" />
+    <creature inPack="1" name="the sorceror" unique="true" />
+
+
+
+	<treasure inPack="6" name="gold" value="10" weight="25" />
+	<treasure inPack="6" name="silver" value="5" weight="25" />
+	<treasure inPack="3" name="gems" value="20" weight="25" />
+    <treasure inPack="1" name="treasure chest" value="?" weight="100" />
+    <treasure inPack="1" name="strength potion" value="5" />
+    <treasure inPack="1" name="genie's lamp" />
+    <treasure inPack="1" name="eye of god" />
+    <treasure inPack="1" name="charmed flute" />
+    <treasure inPack="1" name="magic carpet" />
+    <treasure inPack="1" name="the lost ruby" />
+    <treasure inPack="1" name="the ring" />
+    <treasure inPack="1" name="magic sword" />
+    <treasure inPack="1" name="magic staff" />
+    <treasure inPack="1" name="healing balm" />
+    <treasure inPack="1" name="lotus dust" />
+    <treasure inPack="1" name="talisman" />
+
+    <hazard inPack="2" name="trap"/>
+	<hazard inPack="2" name="earthquake"/>
+    <hazard inPack="1" name="mutiny"/>
+    <hazard inPack="1" name="spell"/>
 </cards>

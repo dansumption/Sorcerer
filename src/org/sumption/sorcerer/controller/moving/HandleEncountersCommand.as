@@ -5,6 +5,7 @@ package org.sumption.sorcerer.controller.moving
     import org.sumption.sorcerer.model.map.TileVO;
     import org.sumption.sorcerer.model.party.PartyMoveVO;
     import org.sumption.sorcerer.model.party.PartyVO;
+    import org.sumption.sorcerer.signal.EnterCavern;
 
     public class HandleEncountersCommand extends Command
     {
@@ -13,6 +14,9 @@ package org.sumption.sorcerer.controller.moving
 
         [Inject]
         public var mapModel:MapModel;
+
+        [Inject]
+        public var enterCavern:EnterCavern;
 
         override public function execute():void
         {
@@ -30,7 +34,7 @@ package org.sumption.sorcerer.controller.moving
             if (toTile.cavern)
             {
                 trace("Cavern contents:" + toTile.cards);
-                // TODO - handle encounter
+                enterCavern.dispatch(toTile);
             }
         }
     }
