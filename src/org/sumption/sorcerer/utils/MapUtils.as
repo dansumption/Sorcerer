@@ -1,6 +1,7 @@
 package org.sumption.sorcerer.utils
 {
     import org.sumption.sorcerer.model.map.LocationVectorVO;
+    import org.sumption.sorcerer.model.map.StaticLocationVectorVO;
 
     public class MapUtils
     {
@@ -14,12 +15,14 @@ package org.sumption.sorcerer.utils
 
         public static const CARDINAL_DIRECTIONS:uint = NORTH | EAST | SOUTH | WEST;
 
-        private static const NORTH_VECTOR:LocationVectorVO = new LocationVectorVO(0, -1, 0);
-        private static const EAST_VECTOR:LocationVectorVO = new LocationVectorVO(1, 0, 0);
-        private static const SOUTH_VECTOR:LocationVectorVO = new LocationVectorVO(0, 1, 0);
-        private static const WEST_VECTOR:LocationVectorVO = new LocationVectorVO(-1, 0, 0);
-        private static const UP_VECTOR:LocationVectorVO = new LocationVectorVO(0, 0, -1);
-        private static const DOWN_VECTOR:LocationVectorVO = new LocationVectorVO(0, 0, 1);
+        public static const ALL_DIRECTIONS:Vector.<uint> = Vector.<uint>([NORTH, EAST, SOUTH, WEST, UP,  DOWN]);
+
+        private static const NORTH_VECTOR:LocationVectorVO = new StaticLocationVectorVO(0, -1, 0);
+        private static const EAST_VECTOR:LocationVectorVO = new StaticLocationVectorVO(1, 0, 0);
+        private static const SOUTH_VECTOR:LocationVectorVO = new StaticLocationVectorVO(0, 1, 0);
+        private static const WEST_VECTOR:LocationVectorVO = new StaticLocationVectorVO(-1, 0, 0);
+        private static const UP_VECTOR:LocationVectorVO = new StaticLocationVectorVO(0, 0, -1);
+        private static const DOWN_VECTOR:LocationVectorVO = new StaticLocationVectorVO(0, 0, 1);
 
 
         public static function name(direction:uint):String
@@ -86,7 +89,7 @@ package org.sumption.sorcerer.utils
             return 0;
         }
 
-        public static function vector(direction:uint):LocationVectorVO
+        public static function directionToVector(direction:uint):LocationVectorVO
         {
             switch (direction)
             {

@@ -25,7 +25,7 @@ package org.sumption.sorcerer.view.parties
                 }
                 else
                 {
-                    var positionOffset:LocationVectorVO = partyVo.positionOnTile ? MapUtils.vector(partyVo.positionOnTile) : new LocationVectorVO(0,0,0);
+                    var positionOffset:LocationVectorVO = partyVo.positionOnTile ? MapUtils.directionToVector(partyVo.positionOnTile) : new LocationVectorVO(0,0,0);
                     partySprite.x = locationOffset.x * Scale.TILE_SIZE + positionOffset.x * Scale.TILE_SIZE/2;
                     partySprite.y = locationOffset.y * Scale.TILE_SIZE + positionOffset.y * Scale.TILE_SIZE/2;
                     partySprite.scaleX = partySprite.scaleY = scale;

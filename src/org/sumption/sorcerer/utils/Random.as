@@ -12,6 +12,11 @@ package org.sumption.sorcerer.utils
             return (Math.random() < 0.5);
         }
 
+        public static function oneThird():Boolean
+        {
+            return (Math.random() < 0.33);
+        }
+
         public static function oneFifth():Boolean
         {
             return (Math.random() < 0.2);

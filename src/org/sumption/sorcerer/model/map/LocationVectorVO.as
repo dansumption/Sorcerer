@@ -4,15 +4,15 @@ package org.sumption.sorcerer.model.map
 
 	public class LocationVectorVO
 	{
-		public var x:int;
-		public var y:int;
-		public var z:int;
+		private var _x:int;
+		private var _y:int;
+		private var _z:int;
 		
 		public function LocationVectorVO(x:int, y:int, z:int)
 		{
-			this.x = x;
-			this.y = y;
-			this.z = z;
+			this._x = x;
+			this._y = y;
+			this._z = z;
 		}
 		
 		public function add(location:LocationVectorVO):void
@@ -63,5 +63,34 @@ package org.sumption.sorcerer.model.map
 				"] (Mapped to uint --> [" + xMapped + ", " + yMapped + ", " + zMapped + "])";
 		}
 
-	}
+        public function get x():int
+        {
+            return _x;
+        }
+
+        public function set x(value:int):void
+        {
+            _x = value;
+        }
+
+        public function get y():int
+        {
+            return _y;
+        }
+
+        public function set y(value:int):void
+        {
+            _y = value;
+        }
+
+        public function get z():int
+        {
+            return _z;
+        }
+
+        public function set z(value:int):void
+        {
+            _z = value;
+        }
+    }
 }

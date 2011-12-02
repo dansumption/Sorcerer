@@ -1,5 +1,7 @@
 package org.sumption.sorcerer.controller
 {
+    import flash.utils.getTimer;
+
     import org.robotlegs.mvcs.SignalCommand;
     import org.sumption.sorcerer.model.CardsModel;
     import org.sumption.sorcerer.model.MapModel;
@@ -40,7 +42,9 @@ package org.sumption.sorcerer.controller
 				tile.east = Random.twoThirds();
 				tile.west = Random.twoThirds();
 			}
-			
+
+            // TODO - consider whether we need to add stairs up.
+            // TODO - consider adding tiles above/below to match stairs.
 			tile.up = Random.oneTwentieth();
 			tile.down = Random.oneTenth();
 			

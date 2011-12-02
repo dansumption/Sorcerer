@@ -4,6 +4,7 @@ package org.sumption.sorcerer.model.map
     public class MapVO
     {
         public var tileData:Array = new Array();
+        public var numTiles:int;
 
         public function addTile(tile:TileVO):void
         {
@@ -15,6 +16,9 @@ package org.sumption.sorcerer.model.map
             if (!tileData[z]) tileData[z] = new Array();
             if (tileData[z][y] == undefined) tileData[z][y] = new Array();
             tileData[z][y][x] = tile;
+            
+            numTiles++;
+            trace('map now contains ' + numTiles + ' tiles');
         }
 
         public function getTile(locationVo:LocationVectorVO):TileVO

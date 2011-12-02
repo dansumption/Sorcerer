@@ -139,6 +139,11 @@ package org.sumption.sorcerer.model.map
 		{
 			return Boolean (exitData & flag);
 		}
+
+        public function addExitOpposite(flag:uint):void
+        {
+            setExitInDirection(MapUtils.opposite(flag), true);
+        }
 		
 		private function setExitInDirection(flag:uint, value:Boolean):void
 		{
@@ -186,7 +191,7 @@ package org.sumption.sorcerer.model.map
 		public function toString():String
 		{
 			var details:String = cavern ? "CAVERN" : "CORRIDOR";
-			details += " at " + LocationVectorVO;
+			details += " at " + location;
 			details += " with exits: ";
 			if (north) details += "north | ";
 			if (east) details += "east | ";

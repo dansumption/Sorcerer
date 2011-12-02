@@ -15,7 +15,7 @@ package org.sumption.sorcerer.controller.startup
 		{
 			var tile:TileVO = new TileVO();
 			tile.location = new LocationVectorVO(0, 0, 0);
-			tile.exitData = MapUtils.CARDINAL_DIRECTIONS | MapUtils.UP | MapUtils.CAVERN;
+			tile.exitData = MapUtils.CARDINAL_DIRECTIONS | MapUtils.CAVERN; // TODO - add MapUtils.UP for exit location;
 			tile.fullyExplored = true;
 			mapModel.addTile(tile);
 		}

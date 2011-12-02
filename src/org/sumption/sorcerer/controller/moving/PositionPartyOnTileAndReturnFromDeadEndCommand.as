@@ -37,7 +37,7 @@ package org.sumption.sorcerer.controller.moving
             var party:PartyVO = partyMoveVo.party;
             party.positionOnTile = partyMoveVo.direction;
             partyMoveVo.direction = MapUtils.opposite(partyMoveVo.direction);
-            var moveVector:LocationVectorVO = MapUtils.vector(partyMoveVo.direction);
+            var moveVector:LocationVectorVO = MapUtils.directionToVector(partyMoveVo.direction);
 
             party.location.add(moveVector);
             trace("Party returned to " + party.location);

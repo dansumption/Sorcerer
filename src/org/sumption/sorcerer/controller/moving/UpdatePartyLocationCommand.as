@@ -24,10 +24,12 @@ package org.sumption.sorcerer.controller.moving
         {
             trace("update party location");
             var party:PartyVO = partyMoveVo.party;
-            var moveVector:LocationVectorVO = MapUtils.vector(partyMoveVo.direction);
+            var moveVector:LocationVectorVO = MapUtils.directionToVector(partyMoveVo.direction);
+            trace("\t from " + party.location);
+            trace ("\t move in direction " + MapUtils.name(partyMoveVo.direction) + " = " + moveVector);
 
             party.location.add(moveVector);
-            trace("Party location now " + party.location);
+            trace("\t Party location after move: " + party.location);
             party.positionOnTile = MapUtils.opposite(partyMoveVo.direction);
 
             if (party.location.z < 0)
