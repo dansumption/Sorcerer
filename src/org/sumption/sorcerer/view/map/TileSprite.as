@@ -17,10 +17,10 @@ package org.sumption.sorcerer.view.map
         public static const STAIR_PADDED_WIDTH:Number = CORRIDOR_WIDTH * 1.8;
         public static const STAIR_WIDTH:Number = STAIR_PADDED_WIDTH - STAIR_PADDING * 4;
 
-        public static const BG_COLOUR:uint = 0x443300;
-        public static const UNEXPLORED_BG_COLOUR:uint = 0x883300;
-        public static const FG_COLOUR:uint = 0xeeeeff;
-        public static const STAIRS_COLOUR:uint = 0x0000cc;
+        public static const BG_COLOUR:uint = 0x00cc00;
+        public static const UNEXPLORED_BG_COLOUR:uint = 0x003300;
+        public static const FG_COLOUR:uint = 0x000000;
+        public static const STAIRS_COLOUR:uint = 0x00ff00;
         public static const NUMBER_OF_STAIRS:uint = 4;
 
         public function TileSprite(tile:TileVO)

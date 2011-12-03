@@ -9,5 +9,8 @@ package org.sumption.sorcerer.model.cards
 		function set numberInPack(value:uint):void;
 		function get points():uint;
 		function set points(value:uint):void;
+        function get unique():Boolean;
+        function set unique(value:Boolean):void;
+        function clone():ICard;
 	}
 }

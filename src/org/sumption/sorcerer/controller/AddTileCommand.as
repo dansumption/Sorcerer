@@ -22,18 +22,19 @@ package org.sumption.sorcerer.controller
         [Inject]
         public var cardsModel:CardsModel;
 
+        private var tile:TileVO;
+
 		override public function execute():void
 		{
 			trace (this + ".execute()");
-			var tile:TileVO = new TileVO();
+			tile = new TileVO();
 			tile.location = location.clone();
-			addExits(tile);
-			addCards(tile);
+			addExits();
+			addCards();
 			mapModel.addTile(tile);
 		}
 
-        //noinspection JSMethodCanBeStatic
-        private function addExits(tile:TileVO):void
+        private function addExits():void
 		{
 			while (tile.numCardinalExits < 2)
 			{
@@ -45,13 +46,13 @@ package org.sumption.sorcerer.controller
 
             // TODO - consider whether we need to add stairs up.
             // TODO - consider adding tiles above/below to match stairs.
-			tile.up = Random.oneTwentieth();
+			// tile.up = Random.oneTwentieth();
 			tile.down = Random.oneTenth();
 			
 			tile.cavern = Random.fiftyFifty();
 		}
 		
-		private function addCards(tile:TileVO):void
+		private function addCards():void
 		{
 			if (tile.cavern)
 			{

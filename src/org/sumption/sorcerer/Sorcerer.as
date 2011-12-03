@@ -7,7 +7,7 @@ package org.sumption.sorcerer
     import org.sumption.sorcerer.view.map.MapView;
     import org.sumption.sorcerer.view.parties.PartiesView;
 
-    [SWF(width="800", height="800", backgroundColor="#FFFFFF")]
+    [SWF(width="800", height="800", backgroundColor="#000000")]
 	
 	public class Sorcerer extends Sprite
 	{
